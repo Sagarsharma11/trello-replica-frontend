@@ -98,7 +98,7 @@ const Login = () => {
         console.error("Login error:", error);
         const message = error.response && error.response.status === 401
             ? "Invalid credentials. Please try again."
-            : "Login failed. Please try again later.";
+            : error.response.data.message;
         setErrors({ api: message });
     };
 
