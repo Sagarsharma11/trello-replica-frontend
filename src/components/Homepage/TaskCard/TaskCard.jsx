@@ -24,21 +24,21 @@ const TaskCard = ({ id, task, onDragStart, handleShow, setModalType }) => {
                             setModalType("delete-task")
                             setCurrentTask(task)
                         }}
-                        className='btn btn-danger btn-sm'>
+                        className='btn btn-danger btn-sm btn-md'>
                         Delete
                     </button>
                     <button onClick={() => {
                         handleShow();
                         setModalType("edit-task")
                         setCurrentTask(task)
-                    }} className="btn btn-info text-white btn-sm">
+                    }} className="btn btn-info text-white btn-sm btn-md">
                         Edit
                     </button>
                     <button onClick={() => {
                         handleShow();
                         setModalType("view-task")
                         setCurrentTask(task)
-                    }} className='btn btn-primary btn-sm'>
+                    }} className='btn btn-primary btn-sm btn-md'>
                         View Details
                     </button>
                 </div>

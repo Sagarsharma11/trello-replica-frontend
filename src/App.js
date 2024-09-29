@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from "./pages/Signup";
+import ErrorPage from "./pages/Error";
 import { TaskProvider } from "./context/TaskContext";
 import withAuth from './auth/withAuth'; // Import the HOC
 
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
     element: (
       <div>
         <Header />
-        {<ProtectedHome/>}  {/* Protecting the Home route */}
+        <ProtectedHome/>  {/* Protecting the Home route */}
       </div>
     ),
   },
@@ -41,6 +42,14 @@ const router = createBrowserRouter([
         <Signup />
       </div>
     ),
+  },
+  {
+    path: "/error", // Route for the error page
+    element: <ErrorPage />,
+  },
+  {
+    path: "*", // Catch-all route to redirect to ErrorPage for any unknown routes
+    element: <ErrorPage />,
   },
 ]);
 
